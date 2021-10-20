@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Pixel Plinko Game by PixelPlush</title>
+        <title>Halloween Pixel Plinko Game by PixelPlush</title>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-6EJRXTPH3Z"></script>
         <script>
@@ -28,14 +28,18 @@
         <div id="unicorn-display"></div>
         <script>
             const params = new URLSearchParams( location.search );
-            setupGame( "Pixel Plinko", {
+            setupGame( "Pixel Plinko (Halloween)", {
                 path: "https://cdn.jsdelivr.net/gh/pixelplush",
-                bg: "game-parachute/bcg",
-                target: "game-parachute/target",
+                bg: "game-plinko/halloween/plinko_bcg",
                 clouds: [ "game-parachute/cloud1", "game-parachute/cloud2", "game-parachute/cloud3", "game-parachute/cloud4", "game-parachute/cloud5" ],
-                peg: "game-plinko/peg",
-                wall: "game-plinko/wall",
-                star: "game-plinko/star",
+                peg: [ "game-plinko/halloween/peg_brown", "game-plinko/halloween/peg_darkred", "game-plinko/halloween/peg_orange" ],
+                // wall: "game-plinko/wall",
+                wallfront: "game-plinko/halloween/walls_plinko_credit",
+                star: Array.from( { length: 31 }, ( _, i ) => `game-plinko/halloween/pumpkin_animation/pumpkin${i+1}` ),
+                starXOffset: -3,
+                starYOffset: -27,
+                target_animate_star_on_landed: true,
+                target_boosh: [ "game-parachute/autumn_theme/land_anim1", "game-parachute/autumn_theme/land_anim2", "game-parachute/autumn_theme/land_anim3", "game-parachute/autumn_theme/land_anim4", "game-parachute/autumn_theme/land_anim5" ],
                 peg_sound: "sfx/boing.mp3",
                 win_sound: "sfx/plinkowin.mp3",
                 characters: {
@@ -44,12 +48,11 @@
                     "avellana": "avelana",
                     "jimmy": "jimmy",
                     "sammie": "sammie",
-                    "boy": "boy",
-                    "girl": "girl",
-                    "rabbit": "rabbit",
-                    "chick": "chick",
+                    "witch": "witch",
+                    "vampire": "vampire",
+                    "zombie": "zombie",
                 },
-                playable: [ "chick", "rabbit" ],
+                playable: [ "witch", "vampire", "zombie" ],
             }, {
                 channel: params.get( "channel" ),
                 oauth: params.get( "oauth" ),

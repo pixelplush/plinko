@@ -41,6 +41,7 @@
                 starYOffset: -27,
                 target_animate_star_on_landed: true,
                 target_boosh: [ "game-parachute/autumn_theme/land_anim1", "game-parachute/autumn_theme/land_anim2", "game-parachute/autumn_theme/land_anim3", "game-parachute/autumn_theme/land_anim4", "game-parachute/autumn_theme/land_anim5" ],
+                queue_sound: "sfx/group_queue.mp3",
                 peg_sound: "sfx/boing.mp3",
                 win_sound: "sfx/plinkowin.mp3",
                 characters: {
@@ -66,6 +67,10 @@
                 cooldown: params.get( "cooldown" ),
                 cpPlink: params.get( "cpPlink" ),
                 cpPlinkCost: params.get( "cpPlinkCost" ),
+                cpQueue: params.get( "cpQueue" ),
+                cpQueueCost: params.get( "cpQueueCost" ),
+                cpQueueCD: params.get( "cpQueueCD" ),
+                queueSound: params.get( "queueSound" ),
                 readyTime: params.get( "readyTime" ),
             });
         </script>

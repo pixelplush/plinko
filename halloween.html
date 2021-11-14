@@ -1,78 +1,128 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Halloween Pixel Plinko Game by PixelPlush</title>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-6EJRXTPH3Z"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-6EJRXTPH3Z');
-        </script>
-        <link rel="stylesheet" href="web/fonts.css" />
-        <script src="https://cdn.jsdelivr.net/npm/tinycolor2/dist/tinycolor-min.js"></script>
-        <script src="https://www.pixelplush.dev/assets/pinkfluffyunicorn.min.js"></script>
-        <script src="web/twemoji-parser.js"></script>
-        <script src="web/plinko.min.js"></script>
-        <style>
-            * {
-                background-color: transparent;
-                margin: 0;
-                padding: 0;
-                border: 0;
-            }
-        </style>
-    </head>
-    <body>
-        <div id="unicorn-display"></div>
-        <script>
-            const params = new URLSearchParams( location.search );
-            setupGame( "Pixel Plinko (Halloween)", {
-                requires: "addon_plinko_halloween",
-                path: "https://cdn.jsdelivr.net/gh/pixelplush",
-                bg: "game-plinko/halloween/plinko_bcg",
-                clouds: [ "game-parachute/cloud1", "game-parachute/cloud2", "game-parachute/cloud3", "game-parachute/cloud4", "game-parachute/cloud5" ],
-                peg: [ "game-plinko/halloween/peg_brown", "game-plinko/halloween/peg_darkred", "game-plinko/halloween/peg_orange" ],
-                // wall: "game-plinko/wall",
-                wallfront: "game-plinko/halloween/walls_plinko_credit",
-                star: Array.from( { length: 31 }, ( _, i ) => `game-plinko/halloween/pumpkin_animation/pumpkin${i+1}` ),
-                starXOffset: -3,
-                starYOffset: -27,
-                target_animate_star_on_landed: true,
-                target_boosh: [ "game-parachute/autumn_theme/land_anim1", "game-parachute/autumn_theme/land_anim2", "game-parachute/autumn_theme/land_anim3", "game-parachute/autumn_theme/land_anim4", "game-parachute/autumn_theme/land_anim5" ],
-                queue_sound: "sfx/group_queue.mp3",
-                peg_sound: "sfx/boing.mp3",
-                win_sound: "sfx/plinkowin.mp3",
-                characters: {
-                    "maaya": "maaya",
-                    "instafluff": "insta",
-                    "avellana": "avelana",
-                    "jimmy": "jimmy",
-                    "sammie": "sammie",
-                    "boy": "boy",
-                    "girl": "girl",
-                },
-                playable: [ "boy", "girl" ],
-            }, {
-                channel: params.get( "channel" ),
-                oauth: params.get( "oauth" ),
-                messageFormat: params.get( "messageFormat" ),
-                overlay: params.get( "overlay" ),
-                clouds: params.get( "clouds" ),
-                hideTilStart: params.get( "hideTilStart" ),
-                volume: params.get( "volume" ),
-                command: params.get( "command" ),
-                commandOn: params.get( "commandOn" ),
-                cooldown: params.get( "cooldown" ),
-                cpPlink: params.get( "cpPlink" ),
-                cpPlinkCost: params.get( "cpPlinkCost" ),
-                cpQueue: params.get( "cpQueue" ),
-                cpQueueCost: params.get( "cpQueueCost" ),
-                cpQueueCD: params.get( "cpQueueCD" ),
-                queueSound: params.get( "queueSound" ),
-                readyTime: params.get( "readyTime" ),
-            });
-        </script>
-    </body>
+<head>
+    <title>Plinko Bounce (Halloween) Game by PixelPlush</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6EJRXTPH3Z"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6EJRXTPH3Z');
+    </script>
+    <link rel="stylesheet" href="css/fonts.css" />
+    <script src="https://cdn.jsdelivr.net/npm/tinycolor2/dist/tinycolor-min.js"></script>
+    <script src="https://www.pixelplush.dev/assets/pinkfluffyunicorn.min.js"></script>
+    <script src="js/twemoji-parser.js"></script>
+    <script src="js/plinko.min.js"></script>
+    <style>
+    * {
+        background-color: transparent;
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+    </style>
+</head>
+<body>
+    <div id="unicorn-display"></div>
+    <script>
+    const params = new URLSearchParams( location.search );
+    setupGame( "Plinko Bounce (Halloween)", {
+	"requires": "addon_plinko_halloween",
+	"path": "https://cdn.jsdelivr.net/gh/pixelplush",
+	"bg": "game-plinko/halloween/plinko_bcg",
+	"clouds": [
+		"game-parachute/cloud1",
+		"game-parachute/cloud2",
+		"game-parachute/cloud3",
+		"game-parachute/cloud4",
+		"game-parachute/cloud5"
+	],
+	"peg": [
+		"game-plinko/halloween/peg_brown",
+		"game-plinko/halloween/peg_darkred",
+		"game-plinko/halloween/peg_orange"
+	],
+	"wallfront": "game-plinko/halloween/walls_plinko_credit",
+	"star": [
+		"game-plinko/halloween/pumpkin_animation/pumpkin1",
+		"game-plinko/halloween/pumpkin_animation/pumpkin2",
+		"game-plinko/halloween/pumpkin_animation/pumpkin3",
+		"game-plinko/halloween/pumpkin_animation/pumpkin4",
+		"game-plinko/halloween/pumpkin_animation/pumpkin5",
+		"game-plinko/halloween/pumpkin_animation/pumpkin6",
+		"game-plinko/halloween/pumpkin_animation/pumpkin7",
+		"game-plinko/halloween/pumpkin_animation/pumpkin8",
+		"game-plinko/halloween/pumpkin_animation/pumpkin9",
+		"game-plinko/halloween/pumpkin_animation/pumpkin10",
+		"game-plinko/halloween/pumpkin_animation/pumpkin11",
+		"game-plinko/halloween/pumpkin_animation/pumpkin12",
+		"game-plinko/halloween/pumpkin_animation/pumpkin13",
+		"game-plinko/halloween/pumpkin_animation/pumpkin14",
+		"game-plinko/halloween/pumpkin_animation/pumpkin15",
+		"game-plinko/halloween/pumpkin_animation/pumpkin16",
+		"game-plinko/halloween/pumpkin_animation/pumpkin17",
+		"game-plinko/halloween/pumpkin_animation/pumpkin18",
+		"game-plinko/halloween/pumpkin_animation/pumpkin19",
+		"game-plinko/halloween/pumpkin_animation/pumpkin20",
+		"game-plinko/halloween/pumpkin_animation/pumpkin21",
+		"game-plinko/halloween/pumpkin_animation/pumpkin22",
+		"game-plinko/halloween/pumpkin_animation/pumpkin23",
+		"game-plinko/halloween/pumpkin_animation/pumpkin24",
+		"game-plinko/halloween/pumpkin_animation/pumpkin25",
+		"game-plinko/halloween/pumpkin_animation/pumpkin26",
+		"game-plinko/halloween/pumpkin_animation/pumpkin27",
+		"game-plinko/halloween/pumpkin_animation/pumpkin28",
+		"game-plinko/halloween/pumpkin_animation/pumpkin29",
+		"game-plinko/halloween/pumpkin_animation/pumpkin30",
+		"game-plinko/halloween/pumpkin_animation/pumpkin31"
+	],
+	"starXOffset": -3,
+	"starYOffset": -27,
+	"target_animate_star_on_landed": true,
+	"target_boosh": [
+		"game-parachute/autumn_theme/land_anim1",
+		"game-parachute/autumn_theme/land_anim2",
+		"game-parachute/autumn_theme/land_anim3",
+		"game-parachute/autumn_theme/land_anim4",
+		"game-parachute/autumn_theme/land_anim5"
+	],
+	"queue_sound": "sfx/group_queue.mp3",
+	"peg_sound": "sfx/boing.mp3",
+	"win_sound": "sfx/plinkowin.mp3",
+	"characters": {
+		"maaya": "maaya",
+		"instafluff": "insta",
+		"avellana": "avelana",
+		"jimmy": "jimmy",
+		"sammie": "sammie",
+		"boy": "boy",
+		"girl": "girl"
+	},
+	"playable": [
+		"boy",
+		"girl"
+	]
+}, {
+        channel: params.get( "channel" ),
+        oauth: params.get( "oauth" ),
+        messageFormat: params.get( "messageFormat" ),
+        overlay: params.get( "overlay" ),
+        clouds: params.get( "clouds" ),
+        hideTilStart: params.get( "hideTilStart" ),
+        volume: params.get( "volume" ),
+        command: params.get( "command" ),
+        commandOn: params.get( "commandOn" ),
+        cooldown: params.get( "cooldown" ),
+        cpPlink: params.get( "cpPlink" ),
+        cpPlinkCost: params.get( "cpPlinkCost" ),
+        cpQueue: params.get( "cpQueue" ),
+        cpQueueCost: params.get( "cpQueueCost" ),
+        cpQueueCD: params.get( "cpQueueCD" ),
+        queueSound: params.get( "queueSound" ),
+        readyTime: params.get( "readyTime" ),
+    });
+    </script>
+</body>
 </html>

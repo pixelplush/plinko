@@ -1,74 +1,85 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Christmas Pixel Plinko Game by PixelPlush</title>
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-6EJRXTPH3Z"></script>
-        <script>
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-6EJRXTPH3Z');
-        </script>
-        <link rel="stylesheet" href="web/fonts.css" />
-        <script src="https://cdn.jsdelivr.net/npm/tinycolor2/dist/tinycolor-min.js"></script>
-        <script src="https://www.pixelplush.dev/assets/pinkfluffyunicorn.min.js"></script>
-        <script src="web/twemoji-parser.js"></script>
-        <script src="web/plinko.min.js"></script>
-        <style>
-            * {
-                background-color: transparent;
-                margin: 0;
-                padding: 0;
-                border: 0;
-            }
-        </style>
-    </head>
-    <body>
-        <div id="unicorn-display"></div>
-        <script>
-            const params = new URLSearchParams( location.search );
-            setupGame( "Pixel Plinko (Christmas)", {
-                path: "https://cdn.jsdelivr.net/gh/pixelplush",
-                bg: "game-plinko/christmas/plinko_bcg",
-                // target: "game-parachute/target",
-                clouds: [ "game-parachute/cloud1", "game-parachute/cloud2", "game-parachute/cloud3", "game-parachute/cloud4", "game-parachute/cloud5" ],
-                peg: [ "game-plinko/christmas/peg_green", "game-plinko/christmas/peg_white", "game-plinko/christmas/peg_red" ],
-                // wall: "game-plinko/wall",
-                wallfront: "game-plinko/christmas/walls_plinko2",
-                star: "game-plinko/christmas/jingle_bell",
-                queue_sound: "sfx/group_queue.mp3",
-                peg_sound: "sfx/boing.mp3",
-                win_sound: "sfx/plinkowin.mp3",
-                characters: {
-                    "maaya": "maaya",
-                    "instafluff": "insta",
-                    "avellana": "avelana",
-                    "jimmy": "jimmy",
-                    "sammie": "sammie",
-                    "boy": "boy",
-                    "girl": "girl",
-                },
-                playable: [ "boy", "girl" ],
-            }, {
-                channel: params.get( "channel" ),
-                oauth: params.get( "oauth" ),
-                messageFormat: params.get( "messageFormat" ),
-                overlay: params.get( "overlay" ),
-                clouds: params.get( "clouds" ),
-                hideTilStart: params.get( "hideTilStart" ),
-                volume: params.get( "volume" ),
-                command: params.get( "command" ),
-                commandOn: params.get( "commandOn" ),
-                cooldown: params.get( "cooldown" ),
-                cpPlink: params.get( "cpPlink" ),
-                cpPlinkCost: params.get( "cpPlinkCost" ),
-                cpQueue: params.get( "cpQueue" ),
-                cpQueueCost: params.get( "cpQueueCost" ),
-                cpQueueCD: params.get( "cpQueueCD" ),
-                queueSound: params.get( "queueSound" ),
-                readyTime: params.get( "readyTime" ),
-            });
-        </script>
-    </body>
+<head>
+    <title>Plinko Bounce (Christmas) Game by PixelPlush</title>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-6EJRXTPH3Z"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6EJRXTPH3Z');
+    </script>
+    <link rel="stylesheet" href="css/fonts.css" />
+    <script src="https://cdn.jsdelivr.net/npm/tinycolor2/dist/tinycolor-min.js"></script>
+    <script src="https://www.pixelplush.dev/assets/pinkfluffyunicorn.min.js"></script>
+    <script src="js/twemoji-parser.js"></script>
+    <script src="js/plinko.min.js"></script>
+    <style>
+    * {
+        background-color: transparent;
+        margin: 0;
+        padding: 0;
+        border: 0;
+    }
+    </style>
+</head>
+<body>
+    <div id="unicorn-display"></div>
+    <script>
+    const params = new URLSearchParams( location.search );
+    setupGame( "Plinko Bounce (Christmas)", {
+	"path": "https://cdn.jsdelivr.net/gh/pixelplush",
+	"bg": "game-plinko/christmas/plinko_bcg",
+	"clouds": [
+		"game-parachute/cloud1",
+		"game-parachute/cloud2",
+		"game-parachute/cloud3",
+		"game-parachute/cloud4",
+		"game-parachute/cloud5"
+	],
+	"peg": [
+		"game-plinko/christmas/peg_green",
+		"game-plinko/christmas/peg_white",
+		"game-plinko/christmas/peg_red"
+	],
+	"wallfront": "game-plinko/christmas/walls_plinko2",
+	"star": "game-plinko/christmas/jingle_bell",
+	"queue_sound": "sfx/group_queue.mp3",
+	"peg_sound": "sfx/boing.mp3",
+	"win_sound": "sfx/plinkowin.mp3",
+	"characters": {
+		"maaya": "maaya",
+		"instafluff": "insta",
+		"avellana": "avelana",
+		"jimmy": "jimmy",
+		"sammie": "sammie",
+		"boy": "boy",
+		"girl": "girl"
+	},
+	"playable": [
+		"boy",
+		"girl"
+	]
+}, {
+        channel: params.get( "channel" ),
+        oauth: params.get( "oauth" ),
+        messageFormat: params.get( "messageFormat" ),
+        overlay: params.get( "overlay" ),
+        clouds: params.get( "clouds" ),
+        hideTilStart: params.get( "hideTilStart" ),
+        volume: params.get( "volume" ),
+        command: params.get( "command" ),
+        commandOn: params.get( "commandOn" ),
+        cooldown: params.get( "cooldown" ),
+        cpPlink: params.get( "cpPlink" ),
+        cpPlinkCost: params.get( "cpPlinkCost" ),
+        cpQueue: params.get( "cpQueue" ),
+        cpQueueCost: params.get( "cpQueueCost" ),
+        cpQueueCD: params.get( "cpQueueCD" ),
+        queueSound: params.get( "queueSound" ),
+        readyTime: params.get( "readyTime" ),
+    });
+    </script>
+</body>
 </html>
